@@ -7,7 +7,12 @@ import { ArtistController } from './artist/artist.controller';
 
 @Module({
   imports: [],
-  controllers: [AppController, UserController, TrackController, ArtistController],
+  controllers: [
+    AppController,
+    UserController,
+    TrackController,
+    ArtistController,
+  ],
   providers: [AppService],
 })
 export class AppModule {}

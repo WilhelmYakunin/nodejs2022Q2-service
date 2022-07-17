@@ -58,8 +58,15 @@ export class UserController {
   @Post()
   @HttpCode(StatusCodes.CREATED)
   create(@Body() CreateUserDto: CreateUserDto): user | string {
-    const newUserId = v4();
     const { login, password } = CreateUserDto;
+    if (login === undefined || password === undefined) {
+      throw new HttpException(
+        'not contain all required fileds',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+
+    const newUserId = v4();
     const newUser = {
       id: newUserId,
       login,

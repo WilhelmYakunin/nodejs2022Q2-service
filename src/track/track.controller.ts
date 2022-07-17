@@ -55,7 +55,12 @@ export class TrackController {
   @HttpCode(StatusCodes.CREATED)
   create(@Body() TrackDto: TrackDto): Track | string {
     const { name, artistId, albumId, duration } = TrackDto;
-    if (name === undefined || duration === undefined) {
+    if (
+      name === undefined ||
+      duration === undefined ||
+      artistId === undefined ||
+      albumId === undefined
+    ) {
       throw new HttpException(
         'not contain all required fileds',
         HttpStatus.BAD_REQUEST,
