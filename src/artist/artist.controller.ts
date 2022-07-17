@@ -14,17 +14,7 @@ import { StatusCodes } from 'http-status-codes';
 import dataSource from '../data.source';
 import paths from '../enums/constants.api';
 import { v4, validate } from 'uuid';
-
-interface Artist {
-  id: string; // uuid v4
-  name: string;
-  grammy: boolean;
-}
-
-interface CreateArtistDto {
-  name: string;
-  grammy: boolean;
-}
+import { Artist, CreateArtistDto } from './types';
 
 @Controller(paths.ARTIST)
 export class ArtistController {

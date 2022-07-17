@@ -14,21 +14,7 @@ import { StatusCodes } from 'http-status-codes';
 import dataSource from '../data.source';
 import paths from '../enums/constants.api';
 import { v4, validate } from 'uuid';
-
-interface Track {
-  id: string; // uuid v4
-  name: string;
-  artistId: string | null; // refers to Artist
-  albumId: string | null; // refers to Album
-  duration: number; // integer number
-}
-
-interface TrackDto {
-  name: string;
-  artistId: string | null; // refers to Artist
-  albumId: string | null; // refers to Album
-  duration: number; // integer number
-}
+import { Track, TrackDto } from './types';
 
 @Controller(paths.TRACK)
 export class TrackController {

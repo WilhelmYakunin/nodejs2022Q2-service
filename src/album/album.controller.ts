@@ -14,26 +14,7 @@ import { StatusCodes } from 'http-status-codes';
 import dataSource from '../data.source';
 import paths from '../enums/constants.api';
 import { v4, validate } from 'uuid';
-
-interface Album {
-  id: string; // uuid v4
-  name: string;
-  year: number;
-  artistId: string | null; // refers to Artist
-}
-
-interface CreateAlbumDto {
-  id: string; // uuid v4
-  name: string;
-  year: number;
-  artistId: string | null; // refers to Artist
-}
-
-interface UpdateAlbumDto {
-  name: string;
-  year: number;
-  artistId: string | null; // refers to Artist
-}
+import { Album, CreateAlbumDto, UpdateAlbumDto } from './types';
 
 @Controller(paths.ALBUM)
 export class AlbumController {
@@ -51,7 +32,7 @@ export class AlbumController {
     }
     const album = dataSource.albums.find((album) => album.id === id);
     if (!album) {
-      throw new HttpException('user not found', HttpStatus.NOT_FOUND);
+      throw new HttpException('Album not found', HttpStatus.NOT_FOUND);
     }
     return album;
   }

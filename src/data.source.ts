@@ -3,4 +3,9 @@ export default {
   tracks: [],
   artists: [],
   albums: [],
+  favs: {
+    artists: [],
+    albums: [],
+    tracks: [],
+  },
 };

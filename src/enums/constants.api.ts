@@ -3,4 +3,5 @@ export default {
   TRACK: 'track',
   ARTIST: 'artist',
   ALBUM: 'album',
+  FAVS: 'favs',
 };
