@@ -34,6 +34,11 @@ After application running open new terminal and enter:
 To run all tests without authorization
 
 ```
+npm run start:dev
+```
+and the same time (in parallel) the script below
+
+```
 npm run test
 ```
 
